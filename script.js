@@ -38,7 +38,7 @@ elementsArray.forEach(function(elem) {
         }
         // populate  display
         if (display.textContent==="0") {
-            display.textContent = elem.value ;
+            if (elem.value) display.textContent = elem.value ;
             // operate logic
             if (operator ===""){
                 num1 = display.textContent;
@@ -144,6 +144,12 @@ elementsArray.forEach(function(elem) {
                 num2 = undefined;
                 operator = "divide";
             }    
+        }
+        if (elem.classList.contains("CE")){
+            num1= undefined;
+            num2= undefined;
+            operator = ""; 
+            display.textContent = "0"; 
         }
     });
 });
